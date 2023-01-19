@@ -24,8 +24,8 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->description }}</td>
                             <td width="150">
-                                <button class="btn btn-outline-warning btn-sm">Edit</button>
-                                <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                <button onclick="confirm('Do you want to delete?') || event.stopImmediatePropagation()" class="btn btn-outline-danger btn-sm">Delete</button>
                             </td>
                         </tr>
                     @endforeach
