@@ -25,7 +25,8 @@
                             <td>{{ $post->description }}</td>
                             <td width="150">
                                 <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-outline-warning btn-sm">Edit</a>
-                                <button onclick="confirm('Do you want to delete?') || event.stopImmediatePropagation()" class="btn btn-outline-danger btn-sm">Delete</button>
+                                <button onclick="confirm('Do you want to delete?') || event.stopImmediatePropagation()"
+                                       wire:click.prevent="destroy({{$post->id}})" class="btn btn-outline-danger btn-sm">Delete</button>
                             </td>
                         </tr>
                     @endforeach
